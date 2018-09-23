@@ -49,3 +49,6 @@ RUN cd /tmp/opencv-3.4.3/build && make -j7 && make install && rm -rf /tmp/opencv
 RUN pip3.5 install dlib face_recognition imutils
 
 RUN pip3.5 install flask
+
+RUN apt-get install -y libcanberra-gtk3-module
+RUN pip3.5 install tornado traitlets

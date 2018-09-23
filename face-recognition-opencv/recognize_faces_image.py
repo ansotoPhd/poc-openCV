@@ -29,8 +29,7 @@ rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 # to each face in the input image, then compute the facial embeddings
 # for each face
 print("[INFO] recognizing faces...")
-boxes = face_recognition.face_locations(rgb,
-	model=args["detection_method"])
+boxes = face_recognition.face_locations(rgb, model=args["detection_method"])
 encodings = face_recognition.face_encodings(rgb, boxes)
 
 # initialize the list of names for each face detected

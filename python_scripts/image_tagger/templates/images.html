@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Faces detection/recognition example</title>
+    <style>
+        .image_viewer {
+            float: left;
+            width: 70%;
+        }
+        .tagger {
+            float: right;
+            width: 30%;
+        }
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <header class="info">
+        <p>Number of detected faces: {{n_faces}}</p>
+        <p>Detection method: {{method}}</p>
+    </header>
+     <div class="row">
+      <div class="image_viewer">
+          <img src="data:image/png;base64, {{image}}" alt="image"/>
+      </div>
+      <div class="tagger">
+          <p>tagger</p>
+      </div>
+    </div>
+</body>
+</html>

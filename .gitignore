@@ -1,2 +1,6 @@
 
 .idea/*
+.idea/
+face-recognition-opencv/dataset/
+face-recognition-opencv/output/
+face-recognition-opencv/videos/
