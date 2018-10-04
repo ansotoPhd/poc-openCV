@@ -14,9 +14,15 @@ RUN apt-get update && \
     libgtk-3-dev \
     # · libraries that are used to optimize various functionalities
     libatlas-base-dev gfortran \
+    # · gstreamer
+    libgstreamer1.0 libgstreamer1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good \
+    libgstreamer-plugins-base1.0-0 libgstreamer-plugins-base1.0-dev \
+    gstreamer1.0-plugins-bad  gstreamer1.0-plugins-ugly gstreamer1.0-libav \
+    gstreamer1.0-doc gstreamer1.0-tools \
     # · python3.5
     libssl-dev libpq-dev libfontconfig1 libfontconfig1-dev \
     python3.5 python3.5-dev
+
 
 # · pip3.5 through easy_install-3.5
 ADD https://bootstrap.pypa.io/ez_setup.py /tmp/ez_setup.py
@@ -40,6 +46,7 @@ RUN mkdir /tmp/opencv-3.4.3/build && cd /tmp/opencv-3.4.3/build && \
           -D CMAKE_INSTALL_PREFIX=/usr/local \
           -D INSTALL_PYTHON_EXAMPLES=ON \
           -D INSTALL_C_EXAMPLES=OFF \
+          -D WITH_GSTREAMER=ON \
           -D OPENCV_EXTRA_MODULES_PATH=/tmp/opencv_contrib-3.4.3/modules \
           -D PYTHON3_EXECUTABLE=/usr/bin/python3.5 \
           -D BUILD_EXAMPLES=ON .. | tee /tmp/opencv-cmake-out.log
